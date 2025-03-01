@@ -1,12 +1,16 @@
-# React + Vite
+# API-Hunter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 *API-Hunter* is a powerful React + Vite application that allows users to search, filter, and explore APIs efficiently. The app provides detailed API information, pagination, and a professional UI with light/dark mode support.
 
-Currently, two official plugins are available:
+## 📌 Features
+- 🔍 *API Search & Filtering* - Find APIs easily with keyword search and category filters.
+- 📄 *Detailed API Information* - View important details about each API.
+- 🔄 *Pagination* - Browse through large lists of APIs seamlessly.
+- 📱 *Responsive Design* - Works on all screen sizes.
+- ⚡ *Fast Performance* - Optimized using React + Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+- *Frontend:* React, Vite, bootstrap
+- *State Management:* React Hooks
+- *API Requests:* Axios / Fetch API
+- *UI Components:* Custom-designed with Bootstrap
