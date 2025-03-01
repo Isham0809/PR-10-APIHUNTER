@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Pagination({ currentPage, totalPosts, postsPerPage, onPageChange }) {
     const totalPages = Math.ceil(totalPosts / postsPerPage);
@@ -39,36 +40,30 @@ function Pagination({ currentPage, totalPosts, postsPerPage, onPageChange }) {
     };
   
     return (
-      <div className="pagination">
-        <button
-          className="pagination-button"
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <FaChevronLeft />
-        </button>
+      <nav>
+        <ul className="pagination justify-content-center mt-3">
+          <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+            <button className="page-link" onClick={() => onPageChange(currentPage - 1)}>
+              <FaChevronLeft />
+            </button>
+          </li>
   
-        {renderPageNumbers().map((page, index) => (
-          <button
-            key={index}
-            className={`pagination-button inline-block ${
-              page === currentPage ? "active" : ""
-            } ${page === "..." ? "ellipsis" : ""}`}
-            onClick={() => typeof page === "number" && onPageChange(page)}
-            disabled={page === "..."}
-          >
-            {page}
-          </button>
-        ))}
+          {renderPageNumbers().map((page, index) => (
+            <li key={index} className={`page-item ${page === currentPage ? 'active' : ''} ${page === '...' ? 'disabled' : ''}`}>
+              <button className="page-link" onClick={() => typeof page === "number" && onPageChange(page)} disabled={page === "..."}>
+                {page}
+              </button>
+            </li>
+          ))}
   
-        <button
-          className="pagination-button inline-block"
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          <FaChevronRight />
-        </button>
-      </div>
+          <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+            <button className="page-link" onClick={() => onPageChange(currentPage + 1)}>
+              <FaChevronRight />
+            </button>
+          </li>
+        </ul>
+      </nav>
     );
-  }
-export default Pagination
+}
+
+export default Pagination;
